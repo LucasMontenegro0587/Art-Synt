@@ -1,17 +1,18 @@
 #root {
+  justify-items: center;
   background-color: #121212;
-  color: #0ff; /* Color de texto neón */
+  color: rgb(100, 8, 206); /* Color de texto neón */
   font-family: 'Courier New', Courier, monospace;
 }
 
 .cyberpunk-logo {
   width: 100px;
-  height: auto;
+  height: 100px;
 }
 
 .text-neon {
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #ff0099;
+  color: rgb(99, 2, 211);
+  text-shadow: 0 0 5px rgb(77, 1, 121), 0 0 10px rgb(187, 0, 0), 0 0 20px #91013d;
 }
 
 .navbar {
@@ -20,12 +21,12 @@
 }
 
 .navbar-brand, .nav-link {
-  color: #0ff !important;
+  color: rgb(0, 80, 24) !important;
 }
 
 .nav-link:hover {
-  color: #ff0099 !important;
-  text-shadow: 0 0 10px #ff0099;
+  color: #310058 !important;
+  text-shadow: 0 0 10px #ff0000;
 }
 
 @keyframes logo-spin {
