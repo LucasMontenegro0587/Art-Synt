@@ -1,21 +1,31 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: #121212;
+  color: #0ff; /* Color de texto neón */
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.cyberpunk-logo {
+  width: 100px;
+  height: auto;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.text-neon {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #ff0099;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.navbar {
+  background-color: #333;
+  border-bottom: 2px solid #0ff;
+}
+
+.navbar-brand, .nav-link {
+  color: #0ff !important;
+}
+
+.nav-link:hover {
+  color: #ff0099 !important;
+  text-shadow: 0 0 10px #ff0099;
 }
 
 @keyframes logo-spin {

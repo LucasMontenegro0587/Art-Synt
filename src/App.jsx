@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import NavbarComponent from './components/NavbarComponent';
+import ItemListContainer from './components/ItemListContainer';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './images/hands-logo.png'; // Asegúrate de tener el logo en la carpeta images
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="cyberpunk-app container-fluid">
+      {/* Header con Logo y Bienvenida */}
+      <header className="d-flex justify-content-between align-items-center py-3">
+        <img src={logo} alt="Logo de la tienda" className="logo cyberpunk-logo" />
+        <h1 className="text-neon">Bienvenidos</h1>
+      </header>
+
+      {/* Componente Navbar */}
+      <NavbarComponent />
+
+      {/* Contenedor de bienvenida */}
+      <main className="text-center mt-4">
+        <ItemListContainer greeting="Bienvenidos" texto="primer-prop" />
+        <p className="text-neon">Explora lo último en tecnología y estilo cyberpunk. Productos únicos a un clic de distancia.</p>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
