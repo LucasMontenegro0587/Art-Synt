@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       {/* Contenedor de ítems */}
       <main className="text-center mt-4">
-        <ItemListContainer greetings="Bienvenidos" texto="primer-prop" />
+        <ItemListContainer greeting="Bienvenidos" texto="primer-prop" />
       </main>
     </div>
   );
