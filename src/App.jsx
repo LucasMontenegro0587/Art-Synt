@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer';
-import Contact from './components/Contact';
+import { NavBar } from './components/NavBar';
+import { ItemListContainer } from './components/ItemListContainer';
+import { Contact } from './components/Contact';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
