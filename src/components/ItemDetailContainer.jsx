@@ -86,13 +86,12 @@ const products = [
 ];
 
 function ItemDetailContainer() {
-    const { id } = useParams();  // Se obtiene el ID del producto desde la URL
+    const { id } = useParams();
 
-    // Busca el producto con el ID que coincide con el parámetro de la URL
     const product = products.find((product) => product.id === parseInt(id));
 
     if (!product) {
-        return <h2>Producto no encontrado</h2>;
+        return <h2>¡Producto no encontrado!</h2>;
     }
 
     return (
