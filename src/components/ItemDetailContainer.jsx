@@ -1,5 +1,7 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
+// Datos simulados de productos, similar a los de ItemListContainer
 const products = [
     {
         id: 1,
@@ -83,28 +85,30 @@ const products = [
     }
 ];
 
-function ItemListContainer({ greeting }) {
+function ItemDetailContainer() {
+    const { id } = useParams();  // Se obtiene el ID del producto desde la URL
+
+    // Busca el producto con el ID que coincide con el parámetro de la URL
+    const product = products.find((product) => product.id === parseInt(id));
+
+    if (!product) {
+        return <h2>Producto no encontrado</h2>;
+    }
+
     return (
-        <div>
-            <h1>{greeting}</h1>
-            <div className="row" style={{ display: 'row', gridTemplateColumns: 'repeat(2fr,1fr)', gap: '5px', justifyContent: 'center', textAlign: 'center', alignItems: 'center', placeItems: 'center'}}>
-                {products.map((product) => (
-                    <div key={product.id} className="col-md-4">
-                        <div className="card">
-                            <img src={product.image} className="card-img-top" alt={product.name} />
-                            <div className="card-body" style={{justifyContent: 'center', alignItems: 'center', placeItems: 'center'}}>
-                                <h2 className="card-title">{product.name}</h2>
-                                <h6 className="card-text">{product.description}</h6>
-                                <h3 className="card-text">{product.price}</h3>
-                                <h5 className="card-text">{product.category}</h5>
-                                {/* Usamos Link para redirigir al detalle del producto */}
-                                <Link to={`/item/${product.id}`} className="btn btn-primary">Ver detalles</Link>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+        <div className="container">
+            <div className="card">
+                <img src={product.image} className="card-img-top" alt={product.name} />
+                <div className="card-body">
+                    <h2 className="card-title">{product.name}</h2>
+                    <p className="card-text">{product.description}</p>
+                    <h3 className="card-text">{product.price}</h3>
+                    <h5 className="card-text">{product.category}</h5>
+                    <button className="btn btn-primary">Agregar al carrito</button>
+                </div>
             </div>
         </div>
     );
 }
-export default ItemListContainer;
+
+export default ItemDetailContainer;
