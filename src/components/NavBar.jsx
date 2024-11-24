@@ -1,5 +1,6 @@
 import React from 'react';
-import { handsLogo } from '../images/hands-logo.png'; // Importa la imagen
+import CartWidget from './CartWidget';
+import handsLogo from '../images/hands-logo.png'; // Importa la imagen
 
 const NavBar = () => {
     return (
@@ -12,6 +13,7 @@ const NavBar = () => {
                     <li className="nav-item"><a className="nav-link" href="Contact.jsx">Contacto</a></li>
                 </ul>
             </div>
+            <CartWidget />
         </nav>
     );
 }
