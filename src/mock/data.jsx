@@ -1,7 +1,3 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-
-// Datos simulados de productos, similar a los de ItemListContainer
 const products = [
   {
     id: 1,
@@ -94,35 +90,31 @@ const products = [
   },
 ];
 
-const ItemDetailContainer = () => {
-  const { id } = useParams();
+export const getProducts = () =>{
 
-  const product = products.find((product) => product.id === parseInt(id));
-
-  if (!product) {
-    return <h2>¡Producto no encontrado!</h2>;
-  }
-
-  return (
-    <div className="container">
-      <div className="card items-center">
-        <div className="border-solid border-2 p-2">
-          <img
-            src={product.image}
-            className="card-img-top max-w-xl"
-            alt={product.name}
-          />
-        </div>
-        <div className="card-body items-start w-full">
-          <h2 className="card-title">{product.name}</h2>
-          <p className="card-text">{product.description}</p>
-          <h3 className="card-text">{product.price}</h3>
-          <h5 className="card-text">{product.category}</h5>
-          <button className="btn btn-primary">Agregar al carrito</button>
-        </div>
-      </div>
-    </div>
-  );
+  let error = false
+  return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+          if(error){
+              reject('Not found')
+          }else{
+              resolve(products)
+          
+          }
+      },3000)
+  })
 }
 
-export default ItemDetailContainer;
+export const getProductById = (id)=>{
+  let error=false
+  return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+          if(!error){
+              let product = products.find((item)=> item.id === id)
+              resolve(product)
+          }else{
+              reject('Not found')
+          }
+      },3000)
+  })
+}
