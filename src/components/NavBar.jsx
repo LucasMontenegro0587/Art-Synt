@@ -1,5 +1,4 @@
 import React from "react";
-import handsLogo from ".../images/hands-logo.png";
 import { Link } from "react-router-dom";
 import { useCart } from '../contexts/CartContext'
 
@@ -11,7 +10,7 @@ const NavBar = () => {
         {/* Logo e Inicio */}
         <Link to={`/`} className="flex items-center">
           <img
-            src={handsLogo}
+            src={"/images/hands-logo.png"}
             alt="main-logo"
             className="h-20 w-20"
           />
