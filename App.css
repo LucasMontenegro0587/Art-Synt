@@ -1,0 +1,57 @@
+#root {
+  justify-items: center;
+  background-color: #121212;
+  color: rgb(100, 8, 206); /* Color de texto neón */
+  font-family: "Courier New", Courier, monospace;
+}
+
+.cyberpunk-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.text-neon {
+  color: rgb(99, 2, 211);
+  text-shadow:
+    0 0 5px rgb(77, 1, 121),
+    0 0 10px rgb(187, 0, 0),
+    0 0 20px #91013d;
+}
+
+.navbar {
+  background-color: #333;
+  border-bottom: 2px solid #0ff;
+}
+
+.navbar-brand,
+.nav-link {
+  color: rgb(0, 80, 24) !important;
+}
+
+.nav-link:hover {
+  color: #310058 !important;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
