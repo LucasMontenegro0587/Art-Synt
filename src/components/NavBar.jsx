@@ -1,5 +1,5 @@
 import React from "react";
-import handsLogo from "../images/hands-logo.png";
+import handsLogo from "../../images/hands-logo.png";
 import { Link } from "react-router-dom";
 import { useCart } from '../contexts/CartContext'
 
