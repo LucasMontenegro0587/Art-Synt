@@ -30,7 +30,7 @@ const ItemListContainer = () => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false))
   }, [category])
-
+  console.log(products);
   return (
     <div className='w-full'>
       <h1 className="text-center">Art-Synt</h1>
