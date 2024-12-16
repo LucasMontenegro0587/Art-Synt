@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import CartWidget from "./components/CartWidget";
+import { FaShoppingCart } from "react-icons/fa";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Contact from "./components/Contact";
@@ -35,4 +37,3 @@ const App = () => {
 }
 
 export default App;
-

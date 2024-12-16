@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import { CartContext } from '../contexts/CartContext'
 import { addDoc, collection, serverTimestamp, getDocs } from 'firebase/firestore'
 import { db } from '../services/firebase'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import '@sweetalert2/theme-dark/dark.css';
 
 const CheckoutUseForm = () => {
     const [orderNumber, setOrderNumber] = useState([])
@@ -11,7 +12,7 @@ const CheckoutUseForm = () => {
     const { cart, cartTotal, clear } = useContext(CartContext)
 
     const onSubmit = async (dataDelForm) => {
-        try {   
+        try {
             const productsCollection = collection(db, "Items");
             const res = await getDocs(productsCollection);
 

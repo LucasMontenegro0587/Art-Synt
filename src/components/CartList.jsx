@@ -3,6 +3,7 @@ import { useCart } from '../contexts/CartContext';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import '@sweetalert2/theme-dark/dark.css';
 
 const CartList = () => {
   const { cart, cartTotal, clear } = useCart();

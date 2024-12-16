@@ -2,7 +2,8 @@ import { useState } from 'react'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
 import { useCart } from '../contexts/CartContext'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import '@sweetalert2/theme-dark/dark.css';
 
 const ItemDetail = ({ product }) => {
   const [compra, setCompra] = useState(false)

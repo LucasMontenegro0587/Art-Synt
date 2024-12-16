@@ -1,13 +1,13 @@
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa"; // Librería de íconos opcional
+import { FaShoppingCart } from "react-icons/fa";
 
 const CartWidget = () => {
-  const itemCount = 7; // Número fijo, representando la cantidad en el carrito. Luego se modificará
+  const itemCount = 7;
 
   return (
     <div className="cart-widget">
-      <span className="badge badge-pill badge-secondary">{itemCount}</span>
-      <FaShoppingCart />
+      <FaShoppingCart className="cart-icon" /> {/* Ícono de carrito */}
+      <span className="item-count">{itemCount}</span> {/* Cantidad de ítems */}
     </div>
   );
 };

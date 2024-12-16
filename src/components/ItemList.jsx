@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from '../contexts/CartContext'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import '@sweetalert2/theme-dark/dark.css';
 
 const ItemList = ({ products }) => {
   const { quantity, addToCart } = useCart()
