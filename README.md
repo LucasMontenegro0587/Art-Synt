@@ -1,29 +1,35 @@
 # React + Vite
 
-Este proyecto es una plantilla básica para trabajar con React en Vite, aprovechando HMR (Hot Module Replacement) y algunas reglas de ESLint.
+Este proyecto utiliza React junto con Vite para ofrecer un entorno rápido y minimalista de desarrollo, incluyendo características como Hot Module Replacement (HMR) y reglas de ESLint. Además, hemos incorporado Tailwind CSS para estilos personalizados y el modo oscuro de SweetAlert2 para alertas visualmente atractivas.
 
 ## Introducción
 
-**Art-Synt** es un proyecto ambientado en el fascinante universo de *Cyberpunk 2077* y *Edgerunners*. Busca capturar la esencia de un mundo futurista lleno de tecnología avanzada, neon y distopía, ofreciendo una experiencia de usuario inmersiva y estilizada. 
+**Art-Synt** es un proyecto inspirado en el universo de *Cyberpunk 2077* y *Edgerunners*. Su objetivo es transportar al usuario a un mundo futurista dominado por tecnologías avanzadas y estéticas ciberpunk. A través de su diseño y funcionalidades, buscamos fusionar lo técnico con lo artístico, ofreciendo una experiencia inmersiva e interactiva.
 
-El enfoque del proyecto combina una interfaz reactiva y rápida, apoyada en herramientas modernas para el desarrollo web, para lograr un diseño funcional y estético.
+### Enfoque
 
-### Decisiones del proyecto
+El diseño está pensado para reflejar los temas del transhumanismo, el caos tecnológico y el dinamismo del mundo ciberpunk. Con Tailwind CSS, logramos un estilo altamente personalizable que se alinea con esta visión, mientras que SweetAlert2 aporta alertas estilizadas que complementan la estética general.
 
-1. **Vite** fue elegido por su velocidad y simplicidad al configurar proyectos de React, así como por su capacidad para proporcionar un entorno de desarrollo eficiente gracias a HMR.
-2. **Tailwind CSS** se incorporó para garantizar un diseño flexible y moderno, optimizando el flujo de trabajo de estilos mediante utilidades predefinidas y personalizables.
-3. **SweetAlert2** se utiliza para implementar alertas elegantes y amigables, que encajan perfectamente con el estilo futurista del proyecto.
+## Plugins y Dependencias
 
-### Dependencias principales
+Actualmente, este proyecto utiliza los siguientes plugins oficiales:
 
-Actualmente, el proyecto utiliza los siguientes complementos oficiales:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md): Utiliza [Babel](https://babeljs.io/) para habilitar Fast Refresh (actualización rápida en desarrollo).
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): Utiliza [SWC](https://swc.rs/) como alternativa ligera para Fast Refresh.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md): utiliza [Babel](https://babeljs.io/) para Fast Refresh.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): utiliza [SWC](https://swc.rs/) para Fast Refresh.
+## Tecnologías y Librerías Adicionales
 
-### Estilo y usabilidad
+- **[Tailwind CSS](https://tailwindcss.com/):** Utilizado para crear un diseño flexible y moderno, con un enfoque en la estética minimalista y personalizable.
+- **[SweetAlert2](https://sweetalert2.github.io/):** Se ha configurado para utilizar su modo oscuro, ideal para reforzar la ambientación ciberpunk del proyecto.
 
-- **Tailwind CSS**: se emplea para crear diseños dinámicos y modernos que reflejen la estética del universo *cyberpunk*.
-- **SweetAlert2**: se utiliza para proporcionar interacciones visualmente atractivas, como notificaciones y confirmaciones.
+### ¿Por qué estas dependencias?
 
-¡Bienvenido/a a explorar este mundo cibernético que combina funcionalidad, diseño y tecnología al más puro estilo de *Cyberpunk 2077*!
+- **Tailwind CSS:** Permite crear interfaces rápidas y responsivas con un alto grado de personalización, asegurando que el diseño se mantenga en línea con la temática futurista.
+- **SweetAlert2 (modo oscuro):** Mejora la experiencia del usuario al proporcionar alertas visuales que son consistentes con el estilo general del proyecto.
+
+## Instrucciones para Empezar
+
+1. Clona este repositorio.
+2. Instala las dependencias ejecutando:  
+   ```bash
+   npm install
