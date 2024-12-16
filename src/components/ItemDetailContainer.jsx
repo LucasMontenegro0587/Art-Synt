@@ -1,24 +1,36 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { getProducts } from "../mock/data";
+
 import { Loader } from "lucide-react";
+import ItemDetail from "../components/ItemDetail"
+import { collection, doc, getDoc } from 'firebase/firestore'
+import { db } from '../services/firebase'
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({})
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
-  console.log(id)
+
   useEffect(() => {
     setLoading(true)
-    getProducts(id)
-      .then((res) => setProducto(res))
+    const collectionProd = collection(db, "Items")
+    const docRef = doc(collectionProd, id)
+    getDoc(docRef)
+      .then((res) => {
+        if (res.data()) {
+          setProducto({ id: res.id, ...res.data() })
+        } else {
+          setInvalidItem(true)
+        }
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false))
   }, [])
+
   return (
     <div>
-      {loading ? <Loader /> : <ItemDetail producto={producto} />}
+      {loading ? <Loader /> : <ItemDetail product={producto} />}
     </div>
   )
 }

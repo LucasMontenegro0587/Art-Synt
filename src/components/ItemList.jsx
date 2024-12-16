@@ -1,31 +1,35 @@
 import { Link } from "react-router-dom";
+import { useCart } from '../contexts/CartContext'
+import Swal from 'sweetalert2'
 
 const ItemList = ({ products }) => {
+  const { quantity, addToCart } = useCart()
+
+  const onAdd = (index) => {
+    addToCart(products[index], 1)
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `${products[index].title} añadido al carrito`,
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
   return (
     <div>
       <div className="text-center">
         <h1>Listado de Productos</h1>
       </div>
-      <div
-        className="row"
-        style={{
-          display: "row",
-          gridTemplateColumns: "repeat(2fr,1fr)",
-          gap: "5px",
-          justifyContent: "center",
-          textAlign: "center",
-          alignItems: "center",
-          placeItems: "center",
-        }}
-      >
-        {products.map((product) => (
-          <div key={product.id} className="col-md-4 my-2">
-            <div className="card items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-1 justify-items-center">
+        {products.map((product, index) => (
+          <div key={product.id} className="p-6">
+            <div className="card text-center border border-gray-300 rounded-lg shadow-xl p-6">
+              <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
               <img
                 src={product.image}
-                className="card-img-top max-w-xs"
-                alt={product.name}
+                className="card-img-top max-w-xs mx-auto mb-6"
+                alt={product.title}
               />
               <div
                 className="card-body space-x-1"
@@ -35,8 +39,17 @@ const ItemList = ({ products }) => {
                   placeItems: "center",
                 }}
               >
-                <button className="bg-green-500">Agregar al carrito</button>
-                <Link to={`/Productos/${product.id}`} className="btn btn-primary">Ver detalles</Link>
+                {quantity(product.id) < product.stock && (
+                  <button className="bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 transition-colors" onClick={() => onAdd(index)}>
+                    Agregar al carrito
+                  </button>
+                )}
+                <Link
+                  to={`/Producto/${product.id}`}
+                  className="btn btn-primary bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-colors"
+                >
+                  Ver detalles
+                </Link>
               </div>
             </div>
           </div>

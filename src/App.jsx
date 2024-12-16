@@ -6,22 +6,30 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Error from './components/Error';
 import { CartProvider } from './contexts/CartContext';
+import CheckoutUseForm from './components/CheckoutUseForm';
 import CartView from './components/CartView';
 
 const App = () => {
   return (
     <CartProvider>
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Routes path="/" element={<Home />} />
-        <Routes path="/Productos" element={<ItemListContainer />} />
-        <Routes path="/Productos/:id" element={<ItemDetailContainer />} />
-        <Routes path="/Contacto" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div className="h-screen overflow-auto">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Productos" element={<ItemListContainer />} />
+            <Route path="/Productos/:category" element={<ItemListContainer />} />
+            <Route path="/Producto/:id" element={<ItemDetailContainer />} />
+            <Route path="/Contacto" element={<Contact />} />
+
+            <Route path='/Carro' element={<CartView />} />
+            <Route path='/Checkout' element={<CheckoutUseForm />} />
+
+            <Route path='*' element={<Error />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </CartProvider>
   )
 }
